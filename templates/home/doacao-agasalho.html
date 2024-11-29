@@ -1,0 +1,170 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Doação de Agasalhos {% endblock %} 
+
+{% block body_class %} doacao-agasalho{% endblock %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+  {% include 'includes/navigation-transparent.html' %}
+
+  <header class="bg-gradient-dark">
+    <div class= "page-header min-vh-75 " style="background-image: url('/static/assets/img/bg11.jpg');" >
+      <span class="mask bg-gradient-dark opacity-6"></span>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center mx-auto my-auto">
+            <h1 class="text-white">Doação de Agasalhos: Transforme Vidas com seu Gestos.</h1>
+            <p class="lead mb-4 text-white opacity-8">Um gesto simples, mas com um impacto que dura. Doe agasalhos e traga calor para quem precisa neste inverno!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="card card-body shadow-xl mx-3 mx-md-4 mt-n6">
+    <section class="py-7">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="row justify-content-start">
+              <div class="col-md-6">
+                <div class="info">
+                  <h4>Aqueça Corações: Doe Agasalhos e Faça a Diferença!</h4>
+                  <p style="text-align: justify;">Esteja pronto para compartilhar calor e solidariedade! Participe da nossa campanha de doação de agasalhos, 
+                    contribuindo com peças em bom estado para aquecer aqueles que mais precisam neste inverno. Sua contribuição faz toda a diferença! 
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info">
+                  <h4>Doação de Agasalhos: Um Gestor de Solidariedade</h4>
+                  <p style="text-align: justify;">A doação de agasalhos é um ato de solidariedade que vai além de aquecer o corpo – é um gesto que toca os corações. 
+                    Ao separar roupas que você já não usa mais, você oferece conforto e esperança para aqueles que enfrentam o inverno com dificuldades. Ao fazer parte dessa corrente de amor e generosidade, você pode transformar a vida de alguém, 
+                    proporcionando calor físico e emocional. Cada agasalho doado é uma pequena demonstração de cuidado e humanidade.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-start mt-4">
+              <div class="col-md-6">
+                <div class="info">
+                  <h5>O Processo de Doação de Agasalhos</h5>
+                  <p style="text-align: justify;">O processo de doação é simples e envolvente, sendo cuidadosamente conduzido por uma rede de voluntários comprometidos. 
+                    Desde o momento em que você escolhe as peças em boas condições até o momento em que elas são entregues a quem precisa, cada etapa é importante e faz a diferença. 
+                    Ao doar, você contribui não apenas com roupas, mas com esperança e dignidade.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info">
+                  <h5>Benefícios de Doar Agasalhos</h5>
+                  <p style="text-align: justify;">A doação de agasalhos traz benefícios para todos os envolvidos. Para quem recebe, é um alívio contra o frio e um sinal de que não estão sozinhos. Para quem doa, é uma oportunidade de praticar a empatia e espalhar solidariedade. Além de ajudar a proteger alguém das baixas temperaturas, você está contribuindo para um mundo mais justo e acolhedor. A solidariedade nunca sai de moda, e gestos como esse reforçam o poder do bem coletivo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 ms-auto mt-lg-0 mt-4">
+            <div class="card">
+              <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2 ">
+                <a class="d-block blur-shadow-image ">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJn8yZNV0yJjxZOJdZz4mZDpDAQfZ7tqchXA&s" alt="img-colored-shadow" class="img-fluid border-radius-lg ms-3" >
+                </a>
+              </div>
+              <div class="card-body text-center">
+                <h5 class="font-weight-normal">
+                  <p=>Procure aqui no site da Prefeitura da sua cidade, pontos de coleta de agasalhos</p>
+                </h5>
+                <button type="button" class="btn bg-gradient-info btn-sm ms-0 mt-1 me-auto" onclick="window.location.href='https://guiadeprefeiturasbrasil.com.br/'">Clique Aqui</button>
+                <div class="text-start">
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+{% endblock content %}
+
+{% block javascripts %}
+
+  <script>
+    var element = document.getElementById('count-stats');
+    var elementHeight = element.clientHeight;
+
+
+    document.addEventListener('scroll', animate);
+
+    function inView() {
+      var windowHeight = window.innerHeight;
+      var scrollY = window.scrollY || window.pageYOffset;
+      var scrollPosition = scrollY + windowHeight;
+      var elementPosition = element.getBoundingClientRect().top + scrollY + elementHeight;
+
+      if (scrollPosition > elementPosition) {
+        return true;
+      }
+
+      return false;
+    }
+
+    var animateComplete = true;
+    function animate() {
+
+      if (inView()) {
+        if (animateComplete) {
+          if (document.getElementById('state1')) {
+            const countUp = new CountUp('state1', document.getElementById("state1").getAttribute("countTo"));
+            if (!countUp.error) {
+              countUp.start();
+            } else {
+              console.error(countUp.error);
+            }
+          }
+          if (document.getElementById('state2')) {
+            const countUp1 = new CountUp('state2', document.getElementById("state2").getAttribute("countTo"));
+            if (!countUp1.error) {
+              countUp1.start();
+            } else {
+              console.error(countUp1.error);
+            }
+          }
+          if (document.getElementById('state3')) {
+            const countUp2 = new CountUp('state3', document.getElementById("state3").getAttribute("countTo"));
+            if (!countUp2.error) {
+              countUp2.start();
+            } else {
+              console.error(countUp2.error);
+            };
+          }
+          animateComplete = false;
+        }
+      }
+    }
+
+    if (document.getElementById('typed')) {
+      var typed = new Typed("#typed", {
+        stringsElement: '#typed-strings',
+        typeSpeed: 90,
+        backSpeed: 90,
+        backDelay: 200,
+        startDelay: 500,
+        loop: true
+      });
+    }
+  </script>
+
+  <script>
+    if (document.getElementsByClassName('page-header')) {
+      window.onscroll = debounce(function() {
+        var scrollPosition = window.pageYOffset;
+        var bgParallax = document.querySelector('.page-header');
+        var oVal = (window.scrollY / 3);
+        bgParallax.style.transform = 'translate3d(0,' + oVal + 'px,0)';
+      }, 6);
+    }
+  </script>
+
+{% endblock javascripts %}
